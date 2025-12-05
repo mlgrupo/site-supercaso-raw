@@ -1,0 +1,252 @@
+.about {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
+  background-color: rgb(14, 15, 45);
+}
+
+.about .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABHwAAAU2CAMAAADQ4lGjAAADAFBMVEUGBQoEBAcKBQkGByMGBRcGBQ8GBh0GBgcHBhMKBw0JBxoGBysGCTMSBgoRCBPo2eQbCQ/v3Ofr4eny4uvk0dbo0d0dDx3p2NwpEBfTucIICzxXHiUmCQzk1tzr3+GaPDKkQTI1CxHh1eM6GSDs1OMsFSP7p5P5oYzIrrbifGLdy9Ty4uPjeFjOtLz4mYXshWjdx8zXalhkICHPvsqTNive0dvkzNDX1+TgcGDXwMXXdF7Xv8zecFSGMy3pf1/OZVEFaeW8oqo/ITIcEC+zTj9+KiX3knzxjnNdKC3h3ehvKiUGD0bUydrJucXw2d4GcOh5NDMwHC/W0NxJICSnSj5DDhLmyNgFZN7YaU3ny+FpLDMGdO9QFBjSYUjHXEXx6+tQJjXu0dbDqK/VyNGNPTcKeeiZRz+wRDToxc20nKbohHK/Tju8qbXFvczEs763WUipl6h2HiDiv8fCYlTcy9/JytqNKCSulJ6+tsXO0uC5rr60pLPNa1yFYXRpSGN+WG/MxdJEK0HdempaLkUFbe6xssnft7+ri5Xhv9Z1T2piPlOvnq+4vNAJc9/skID7r5yprMReERKwp76KaYC3mZ7seGoHfPL1gninUE6SdINpVW/FvNaDP0fBUkx9eJoFFlZfNV6GgKCkLipVLVmlnbXJo7T38fRjW4KSfJGho75+cofPU0bXr7MwJD+9xtdyN0TRv9ece4WSZndyX3ejjp95b5OihI6cbn4HWNjDss1zZYcHaNMHWskGH2hvEBJ8Zn6Jc5C+kaq4iprb5PmPSlickquXl7a1W1xHPFGRiKZZT3Wedo0GMpJVSmH6BCcHULivfo28NDTFb20GRKXJn6SggJmZV2beqqaJjLHunY7XrMAGIH+VhpreV');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.about .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about .header {
+  text-align: center;
+}
+
+.about .title {
+  font-family: "Playfair Display", "Playfair Display Placeholder", serif;
+  font-size: 60px;
+  color: rgb(255, 252, 246);
+  margin-bottom: 20px;
+  line-height: 1.2em;
+}
+
+.about .title-main {
+  display: block;
+  font-weight: 400;
+}
+
+.about .title-sub {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.about .tagline {
+  font-family: "Cormorant Infant", "Cormorant Infant Placeholder", serif;
+  font-size: 32px;
+  line-height: 1em;
+  color: rgb(255, 225, 166);
+  margin: 0;
+}
+
+.about .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about .paragraph {
+  font-family: "Source Sans 3", "Source Sans 3 Placeholder", sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  color: rgb(255, 252, 246);
+  text-align: left;
+  margin: 0;
+}
+
+.about .paragraph .white {
+  color: rgb(255, 255, 255);
+}
+
+.about .highlight {
+  color: rgb(255, 225, 166);
+}
+
+.about .highlight strong {
+  font-weight: 700;
+}
+
+.about .cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  grid-column: 1 / -1;
+}
+
+/* Tablet - 810px */
+@media (max-width: 810px) {
+  .about {
+    padding: 60px 15px;
+  }
+
+  .about .bg {
+    width: 100%;
+    background-image: url(../../imgs/background-mobile.png);
+    background-position: top center;
+    opacity: 0.2;
+  }
+
+  .about .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about .title {
+    font-size: 48px;
+  }
+
+  .about .title-sub {
+    font-size: 28px;
+  }
+
+  .about .tagline {
+    font-size: 28px;
+  }
+
+  .about .paragraph {
+    font-size: 16px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+
+  .about .content {
+    gap: 35px;
+  }
+
+  .about .title {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
+
+  .about .title-sub {
+    font-size: 26px;
+  }
+
+  .about .tagline {
+    font-size: 26px;
+  }
+
+  .about .text {
+    gap: 18px;
+  }
+
+  .about .paragraph {
+    font-size: 15px;
+    line-height: 1.5em;
+  }
+
+  .about .cta {
+    margin-top: 30px;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .about {
+    padding: 30px 10px;
+  }
+
+  .about .content {
+    gap: 30px;
+  }
+
+  .about .title {
+    font-size: 36px;
+  }
+
+  .about .title-sub {
+    font-size: 24px;
+  }
+
+  .about .tagline {
+    font-size: 24px;
+  }
+
+  .about .text {
+    gap: 15px;
+  }
+
+  .about .paragraph {
+    font-size: 14px;
+  }
+
+  .about .cta {
+    margin-top: 25px;
+  }
+}
+
+/* Smartphone muito pequeno - 370px */
+@media (max-width: 370px) {
+  .about {
+    padding: 25px 8px;
+  }
+
+  .about .content {
+    gap: 25px;
+  }
+
+  .about .title {
+    font-size: 32px;
+    line-height: 1.1em;
+    margin-bottom: 12px;
+  }
+
+  .about .title-sub {
+    font-size: 22px;
+  }
+
+  .about .tagline {
+    font-size: 22px;
+  }
+
+  .about .text {
+    gap: 12px;
+  }
+
+  .about .paragraph {
+    font-size: 13px;
+    line-height: 1.4em;
+  }
+
+  .about .cta {
+    margin-top: 20px;
+  }
+}
+

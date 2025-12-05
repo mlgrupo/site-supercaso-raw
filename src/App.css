@@ -1,0 +1,14 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(14, 15, 45);
+  color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+
+/* Garantir que imagens sejam responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+

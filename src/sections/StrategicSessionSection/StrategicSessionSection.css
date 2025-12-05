@@ -1,0 +1,280 @@
+.strategic {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: rgb(14, 15, 45);
+}
+
+.strategic .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: fit-content;
+}
+
+.strategic .header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 32px;
+  height: fit-content;
+
+}
+
+.strategic .title {
+  font-family: "Cormorant Infant", "Cormorant Infant Placeholder", serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 65px;
+  color: rgb(255, 225, 166);
+  margin-bottom: 5px;
+}
+
+.strategic .subtitle {
+  font-family: "Sora", "Sora Placeholder", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.4em;
+  color: rgb(255, 255, 255);
+}
+
+.strategic .points {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.strategic .point {
+  border: 1px solid rgb(255, 225, 166);
+  border-radius: 8px;
+  max-width: 32%;
+  height: fit-content;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.strategic .icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.strategic .text {
+  font-family: "Lato", "Lato Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 1.3em;
+  color: rgb(227, 222, 222);
+}
+
+.strategic .text strong {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.strategic .cta {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Tablet - 810px */
+@media (max-width: 1280x) {
+  .strategic {
+    padding: 60px 15px;
+  }
+
+  .strategic .header {
+    margin-bottom: 50px;
+  }
+
+  .strategic .title {
+    font-size: 52px;
+    line-height: 54px;
+  }
+
+  .strategic .subtitle {
+    font-size: 28px;
+  }
+
+  .strategic .points {
+    display: flex;
+    min-width: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .strategic .point {
+    padding: 25px;
+    min-width: 400px;
+
+    width: 300px;
+  }
+
+  .strategic .icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+}
+
+/* Tablet - 810px */
+@media (max-width: 810px) {
+  .strategic {
+    padding: 60px 15px;
+  }
+
+  .strategic .header {
+    margin-bottom: 50px;
+  }
+
+  .strategic .title {
+    font-size: 52px;
+    line-height: 54px;
+  }
+
+  .strategic .subtitle {
+    font-size: 28px;
+  }
+
+  .strategic .points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .strategic .point {
+    padding: 25px;
+    min-width: 400px;
+    width: 80%;
+  }
+
+  .strategic .icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .strategic {
+    padding: 40px 15px;
+  }
+
+  .strategic .header {
+    margin-bottom: 40px;
+  }
+
+  .strategic .title {
+    font-size: 42px;
+    line-height: 44px;
+    margin-bottom: 15px;
+  }
+
+  .strategic .subtitle {
+    font-size: 22px;
+  }
+
+  .strategic .points {
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .strategic .point {
+    padding: 20px;
+  }
+
+  .strategic .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .strategic .text {
+    font-size: 15px;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .strategic {
+    padding: 30px 10px;
+  }
+
+
+  .strategic .title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .strategic .subtitle {
+    font-size: 16px;
+  }
+
+  .strategic .points {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .strategic .point {
+    padding: 18px;
+    min-width: 300px;
+  }
+
+  .strategic .icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .strategic .text {
+    font-size: 14px;
+  }
+}
+
+/* Smartphone muito pequeno - 370px */
+@media (max-width: 370px) {
+  .strategic {
+    padding: 25px 8px;
+  }
+
+
+
+  .strategic .title {
+    font-size: 22px;
+    line-height: 34px;
+  }
+
+  .strategic .subtitle {
+    font-size: 14px;
+    line-height: 1em;
+  }
+
+  .strategic .points {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .strategic .point {
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .strategic .icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .strategic .text {
+    font-size: 13px;
+    line-height: 1.4em;
+  }
+}
+

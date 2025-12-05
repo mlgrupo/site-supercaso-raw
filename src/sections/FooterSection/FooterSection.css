@@ -1,0 +1,155 @@
+.footer {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  padding: 60px 20px 40px;
+}
+
+.footer .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer .disclaimer,
+.footer .company,
+.footer .copyright {
+  font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  line-height: 1.5em;
+  color: rgba(245, 245, 245, 0.8);
+  margin: 0;
+  max-width: 900px;
+}
+
+.footer .links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer .link {
+  color: rgba(245, 245, 245, 0.8);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.footer .link:hover {
+  color: rgb(255, 225, 166);
+  text-decoration: underline;
+}
+
+.footer .copyright {
+  margin-top: 10px;
+}
+
+.footer .copyright .link {
+  font-weight: 700;
+}
+
+/* Tablet - 810px */
+@media (max-width: 810px) {
+  .footer {
+    padding: 50px 15px 35px;
+  }
+
+  .footer .content {
+    gap: 18px;
+  }
+
+  .footer .disclaimer,
+  .footer .company,
+  .footer .copyright {
+    font-size: 13px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 15px 30px;
+  }
+
+  .footer .content {
+    gap: 15px;
+  }
+
+  .footer .disclaimer,
+  .footer .company,
+  .footer .copyright {
+    font-size: 12px;
+    line-height: 1.4em;
+  }
+
+  .footer .links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px 25px;
+  }
+
+  .footer .content {
+    gap: 12px;
+  }
+
+  .footer .disclaimer,
+  .footer .company,
+  .footer .copyright {
+    font-size: 11px;
+  }
+
+  .footer .links {
+    gap: 8px;
+  }
+
+  .footer .link {
+    font-size: 11px;
+  }
+}
+
+/* Smartphone muito pequeno - 370px */
+@media (max-width: 370px) {
+  .footer {
+    padding: 25px 8px 20px;
+  }
+
+  .footer .content {
+    gap: 10px;
+  }
+
+  .footer .disclaimer,
+  .footer .company,
+  .footer .copyright {
+    font-size: 10px;
+    line-height: 1.5em;
+  }
+
+  .footer .links {
+    gap: 6px;
+  }
+
+  .footer .link {
+    font-size: 10px;
+  }
+
+  .footer .copyright {
+    margin-top: 8px;
+  }
+}
+

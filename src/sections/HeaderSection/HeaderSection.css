@@ -1,0 +1,388 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url(../../imgs/back-leo-desk.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+.header .container {
+  width: 100%;
+  /* max-width: 1200px; */
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.header .content {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.header .title {
+  font-family: "Playfair Display", "Playfair Display Placeholder", serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.3em;
+  color: rgb(255, 225, 166);
+  margin-bottom: 40px;
+}
+
+.header .text {
+  margin-bottom: 40px;
+}
+
+.header .text-line {
+  font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  line-height: 34px;
+  color: rgb(255, 255, 255);
+  margin: 10px 0;
+}
+
+.header .text-line.bold {
+  font-weight: 800;
+}
+
+.header .text-line .normal {
+  font-weight: 400;
+}
+
+.header .text-line.highlight {
+  color: rgb(255, 225, 166);
+  text-decoration: underline;
+}
+
+.header .description {
+  margin: 40px 0;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header .desc-text {
+  font-family: "Montserrat", "Montserrat Placeholder", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3em;
+  color: rgb(255, 255, 255);
+  margin: 15px 0;
+  text-align: center;
+}
+
+.header .desc-text strong {
+  font-weight: 800;
+}
+
+.header .desc-text .normal {
+  font-weight: 400;
+}
+
+.header .cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Tablet - 810px */
+@media (max-width: 810px) {
+  .header .bg {
+    background-image: url(../../imgs/background-mobile.png);
+    background-position: top center;
+  }
+
+  .header .container {
+    padding: 30px 15px;
+  }
+
+  .header .content {
+    width: 100%;
+  }
+
+  .header .title {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+
+  .header .text {
+    margin-bottom: 30px;
+  }
+
+  .header .text-line {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .header .description {
+    margin: 30px 0;
+    max-width: 100%;
+  }
+
+  .header .desc-text {
+    font-size: 18px;
+  }
+
+  .header .cta {
+    margin-top: 30px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .header {
+    height: 88vh;
+    padding: 0;
+    align-items: center;
+  }
+
+  .header .container {
+    padding: 20px 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .header .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .header .title {
+    font-size: 36px;
+    margin-bottom: 0;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .header .bottom-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .header .text {
+    margin-bottom: 15px;
+  }
+
+  .header .description {
+    margin-bottom: 15px;
+  }
+
+  .header .cta {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .header .text-line {
+    font-size: 20px;
+    line-height: 26px;
+    margin: 8px 0;
+  }
+
+  .header .desc-text {
+    font-size: 16px;
+    margin: 12px 0;
+  }
+
+  .header .description {
+    margin: 0;
+  }
+
+  .header .cta {
+    margin-top: 0;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .header {
+    height: 88vh;
+
+  }
+
+  .header .container {
+    padding: 15px 6px;
+    height: 100%;
+  }
+
+  .header .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .header .title {
+    font-size: 32px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .header .bottom-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    min-height: 0;
+  }
+
+ 
+
+  .header .text-line {
+    font-size: 22px;
+    line-height: 26px;
+    margin: 6px 0;
+  }
+
+  .header .desc-text {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+
+  .header .cta {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 410px) {
+    .header {
+      height: 88vh;
+    }
+  
+    .header .container {
+      padding: 15px 10px;
+      height: 100%;
+    }
+  
+    .header .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .header .title {
+      font-size: 28px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+  
+    .header .bottom-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex: 1;
+      min-height: 0;
+    }
+  
+   
+  
+    .header .text-line {
+      font-size: 20px;
+      line-height: 22px;
+      margin: 6px 0;
+    }
+  
+    .header .desc-text {
+      font-size: 12px;
+      margin: 10px 0;
+    }
+  
+    .header .description {
+      margin-bottom: 12px;
+    }
+  
+    .header .cta {
+      margin-top: 0;
+    }
+  }
+
+/* Smartphone muito pequeno - 370px */
+@media (max-width: 370px) {
+  .header {
+    height: 88vh;
+
+  }
+
+  .header .container {
+    padding: 10px 8px;
+    height: 100%;
+  }
+
+  .header .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .header .title {
+    font-size: 28px;
+    margin-bottom: 0;
+    line-height: 1.2em;
+    flex-shrink: 0;
+  }
+
+  .header .bottom-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .header .text {
+    margin-bottom: 10px;
+  }
+
+  .header .text-line {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 5px 0;
+  }
+
+  .header .description {
+    margin-bottom: 10px;
+  }
+
+  .header .desc-text {
+    font-size: 13px;
+    margin: 8px 0;
+    line-height: 1.4em;
+  }
+
+  .header .cta {
+    margin-top: 0;
+  }
+}
+

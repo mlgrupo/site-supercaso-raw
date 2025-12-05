@@ -1,0 +1,101 @@
+.button-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+}
+
+.button-container img {
+  width: auto;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button--primary {
+  background-color: rgb(211, 17, 26);
+  border: 1px solid rgb(255, 225, 166);
+  color: rgb(255, 255, 255);
+  font-family: "Sfizia Bold", "Sfizia Bold Placeholder", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: center;
+  padding: 12px 24px;
+}
+
+.button--primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.button--primary:active {
+  transform: translateY(0);
+}
+
+/* Tablet - 810px */
+@media (max-width: 810px) {
+  .button--primary {
+    font-size: 20px;
+    padding: 11px 22px;
+  }
+  
+  .button-container img {
+    height: 50px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .button--primary {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 10px 20px;
+  }
+  
+  .button-container img {
+    height: 40px;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .button--primary {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 9px 18px;
+  }
+  
+  .button-container img {
+    height: 36px;
+  }
+}
+
+/* Smartphone muito pequeno - 370px */
+@media (max-width: 370px) {
+  .button--primary {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .button-container img {
+    height: 36px;
+  }
+}
+

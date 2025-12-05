@@ -1,0 +1,74 @@
+.video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  transform: unset;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.video .thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.video .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.video .iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Tablet - 810px */
+@media (max-width: 810px) {
+  .video .play-btn {
+    width: 60px;
+    height: 42px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .video .play-btn {
+    width: 56px;
+    height: 40px;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .video .play-btn {
+    width: 50px;
+    height: 36px;
+  }
+}
+
+/* Smartphone muito pequeno - 370px */
+@media (max-width: 370px) {
+  .video .play-btn {
+    width: 45px;
+    height: 32px;
+  }
+}
+
