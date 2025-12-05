@@ -5,27 +5,28 @@
   align-items: center;
   justify-content: center;
   position: relative;
+    gap : 20px;
   overflow: hidden;
   padding: 80px 20px;
   background-color: rgb(14, 15, 45);
 }
 
 .about .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
   width: 50%;
-  height: 100%;
+  height: 800px;
+
   z-index: 0;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABHwAAAU2CAMAAADQ4lGjAAADAFBMVEUGBQoEBAcKBQkGByMGBRcGBQ8GBh0GBgcHBhMKBw0JBxoGBysGCTMSBgoRCBPo2eQbCQ/v3Ofr4eny4uvk0dbo0d0dDx3p2NwpEBfTucIICzxXHiUmCQzk1tzr3+GaPDKkQTI1CxHh1eM6GSDs1OMsFSP7p5P5oYzIrrbifGLdy9Ty4uPjeFjOtLz4mYXshWjdx8zXalhkICHPvsqTNive0dvkzNDX1+TgcGDXwMXXdF7Xv8zecFSGMy3pf1/OZVEFaeW8oqo/ITIcEC+zTj9+KiX3knzxjnNdKC3h3ehvKiUGD0bUydrJucXw2d4GcOh5NDMwHC/W0NxJICSnSj5DDhLmyNgFZN7YaU3ny+FpLDMGdO9QFBjSYUjHXEXx6+tQJjXu0dbDqK/VyNGNPTcKeeiZRz+wRDToxc20nKbohHK/Tju8qbXFvczEs763WUipl6h2HiDiv8fCYlTcy9/JytqNKCSulJ6+tsXO0uC5rr60pLPNa1yFYXRpSGN+WG/MxdJEK0HdempaLkUFbe6xssnft7+ri5Xhv9Z1T2piPlOvnq+4vNAJc9/skID7r5yprMReERKwp76KaYC3mZ7seGoHfPL1gninUE6SdINpVW/FvNaDP0fBUkx9eJoFFlZfNV6GgKCkLipVLVmlnbXJo7T38fRjW4KSfJGho75+cofPU0bXr7MwJD+9xtdyN0TRv9ece4WSZndyX3ejjp95b5OihI6cbn4HWNjDss1zZYcHaNMHWskGH2hvEBJ8Zn6Jc5C+kaq4iprb5PmPSlickquXl7a1W1xHPFGRiKZZT3Wedo0GMpJVSmH6BCcHULivfo28NDTFb20GRKXJn6SggJmZV2beqqaJjLHunY7XrMAGIH+VhpreV');
-  background-size: cover;
-  background-position: left center;
+  background-image: url('../../imgs/Leo-ver.png');
+  background-size: auto;
+  background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 .about .container {
-  width: 100%;
+  width: 50%;
+  display: flex;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -33,8 +34,8 @@
 }
 
 .about .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 60px;
   align-items: center;
 }
@@ -47,8 +48,7 @@
   font-family: "Playfair Display", "Playfair Display Placeholder", serif;
   font-size: 60px;
   color: rgb(255, 252, 246);
-  margin-bottom: 20px;
-  line-height: 1.2em;
+  margin: 0 0 20px 0;
 }
 
 .about .title-main {
@@ -107,51 +107,41 @@
 /* Tablet - 810px */
 @media (max-width: 810px) {
   .about {
-    padding: 60px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
   }
 
   .about .bg {
     width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: url(../../imgs/background-mobile.png);
     background-position: top center;
-    opacity: 0.2;
+    opacity: 0.9;
+  }
+
+  .about .container {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .about .header {
+    height: fit-content;
   }
 
   .about .content {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
 
   .about .title {
-    font-size: 48px;
-  }
-
-  .about .title-sub {
-    font-size: 28px;
-  }
-
-  .about .tagline {
-    font-size: 28px;
-  }
-
-  .about .paragraph {
-    font-size: 16px;
-  }
-}
-
-/* Mobile - 768px */
-@media (max-width: 768px) {
-  .about {
-    padding: 40px 15px;
-    min-height: auto;
-  }
-
-  .about .content {
-    gap: 35px;
-  }
-
-  .about .title {
-    font-size: 42px;
+    font-size: 40px;
+    line-height: 1.1em;
     margin-bottom: 15px;
   }
 
@@ -164,31 +154,56 @@
   }
 
   .about .text {
-    gap: 18px;
+    gap: 15px;
   }
 
   .about .paragraph {
     font-size: 15px;
-    line-height: 1.5em;
+    line-height: 1.4em;
   }
 
   .about .cta {
-    margin-top: 30px;
+    margin-top: 25px;
   }
 }
 
-/* Smartphone pequeno - 480px */
-@media (max-width: 480px) {
+/* Mobile - 768px */
+@media (max-width: 768px) {
   .about {
-    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 12px;
+    min-height: auto;
+  }
+
+  .about .bg {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about .container {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .about .header {
+    height: fit-content;
   }
 
   .about .content {
-    gap: 30px;
+    gap: 15px;
   }
 
   .about .title {
     font-size: 36px;
+    line-height: 1.1em;
+    margin-bottom: 12px;
   }
 
   .about .title-sub {
@@ -200,26 +215,108 @@
   }
 
   .about .text {
-    gap: 15px;
+    gap: 14px;
   }
 
   .about .paragraph {
     font-size: 14px;
+    line-height: 1.4em;
   }
 
   .about .cta {
-    margin-top: 25px;
+    margin-top: 22px;
+  }
+}
+
+/* Smartphone pequeno - 480px */
+@media (max-width: 480px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+
+  .about .bg {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about .container {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .about .header {
+    height: fit-content;
+  }
+
+  .about .content {
+    gap: 10px;
+  }
+
+  .about .title {
+    font-size: 34px;
+    line-height: 1.1em;
+    margin-bottom: 12px;
+  }
+
+  .about .title-sub {
+    font-size: 23px;
+  }
+
+  .about .tagline {
+    font-size: 23px;
+  }
+
+  .about .text {
+    gap: 13px;
+  }
+
+  .about .paragraph {
+    font-size: 13.5px;
+    line-height: 1.4em;
+  }
+
+  .about .cta {
+    margin-top: 20px;
   }
 }
 
 /* Smartphone muito pequeno - 370px */
 @media (max-width: 370px) {
   .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 25px 8px;
   }
+  .about .bg {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+  }
+
+  .about .container {
+    width: 100%;
+    height: fit-content;
+  }
+  
+.about .header {
+  height: fit-content;
+}
   .about .content {
-    gap: 25px;
+    gap: 5px;
   }
 
   .about .title {

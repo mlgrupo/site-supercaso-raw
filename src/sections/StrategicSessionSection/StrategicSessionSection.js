@@ -1,9 +1,12 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
+import { useForm } from '../../context/FormContext';
 import './StrategicSessionSection.css';
 import reconecta from '../../imgs/reconecta.svg';
 
 const StrategicSessionSection = () => {
+  const { openForm } = useForm();
+  
   const strategicPoints = [
     {
       icon: <img src={reconecta} alt="Reconecta" />,
@@ -38,7 +41,7 @@ const StrategicSessionSection = () => {
   ];
 
   const handleCheckAvailability = () => {
-    console.log('Verificar disponibilidade');
+    openForm();
   };
 
   return (

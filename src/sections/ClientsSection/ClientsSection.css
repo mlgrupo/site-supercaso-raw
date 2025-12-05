@@ -52,7 +52,7 @@
 
 .clients .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 380px);
+  grid-template-columns: repeat(3, 380px);
   gap: 20px;
   justify-content: center;
 }
@@ -60,6 +60,20 @@
 .clients .card-wrapper {
   width: 380px;
   height: 104px;
+}
+
+/* Tablet - 2 colunas entre 1280px e 810px */
+@media (max-width: 1280px) and (min-width: 811px) {
+  .clients .grid {
+    grid-template-columns: repeat(2, 380px);
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .clients .card-wrapper {
+    width: 380px;
+    height: 104px;
+  }
 }
 
 /* Tablet - 810px */
@@ -82,13 +96,15 @@
   }
 
   .clients .grid {
-    grid-template-columns: repeat(auto-fit, 380px);
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
     gap: 25px;
-    justify-content: center;
   }
 
   .clients .card-wrapper {
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     height: 104px;
   }
 }
@@ -120,7 +136,8 @@
   }
 
   .clients .card-wrapper {
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     height: 104px;
   }
 }
@@ -151,7 +168,8 @@
   }
 
   .clients .card-wrapper {
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     height: 104px;
   }
 }
@@ -183,7 +201,8 @@
   }
 
   .clients .card-wrapper {
-    width: 380px;
+    width: 100%;
+    max-width: 100%;
     height: 104px;
   }
 }

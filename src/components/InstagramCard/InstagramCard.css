@@ -174,48 +174,50 @@
   }
 
   .card .content {
-    padding: 12px 16px;
-    gap: 16px;
+    padding: 14px 18px;
+    gap: 18px;
   }
 
-
+  .card .avatar {
+    gap: 2px;
+  }
 
   .card .avatar img:not(.img) {
-    height: 32px;
+    height: 36px;
     margin-top: 35px;
   }
 
   .card .img {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border: 2px solid #4C000D;
     box-sizing: border-box;
   }
 
   .card .info {
-    gap: 8px;
+    gap: 10px;
   }
 
   .card .username {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .card .user img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   .card .stats {
-    gap: 16px;
+    gap: 18px;
     flex-wrap: nowrap;
   }
 
   .card .value {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .card .label {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -227,8 +229,8 @@
   }
 
   .card .content {
-    padding: 12px 16px;
-    gap: 16px;
+    padding: 14px 18px;
+    gap: 18px;
   }
 
   .card .avatar {
@@ -236,50 +238,51 @@
   }
 
   .card .avatar img:not(.img) {
-    height: 32px;
+    height: 36px;
     margin-top: 35px;
   }
 
   .card .img {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border: 2px solid #4C000D;
     box-sizing: border-box;
   }
 
   .card .username {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .card .user img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   .card .stats {
-    gap: 16px;
+    gap: 18px;
     flex-wrap: nowrap;
   }
 
   .card .value {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .card .label {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
 /* Smartphone muito pequeno - 370px */
 @media (max-width: 370px) {
   .card {
-    width: 380px;
+    width: 100%;
+    max-width: 100%;
     height: 104px;
   }
 
   .card .content {
-    padding: 12px 16px;
-    gap: 15px;
+    padding: 14px 12px;
+    gap: 12px;
   }
 
   .card .avatar {
@@ -303,7 +306,7 @@
   }
 
   .card .username {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .card .user img {
@@ -312,7 +315,7 @@
   }
 
   .card .stats {
-    gap: 16px;
+    gap: 12px;
     flex-wrap: nowrap;
   }
 
@@ -321,11 +324,58 @@
   }
 
   .card .value {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .card .label {
     font-size: 10px;
+  }
+}
+
+/* Smartphone muito pequeno - 400px */
+@media (max-width: 400px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card .content {
+    padding: 14px 10px;
+    gap: 10px;
+  }
+
+  .card .avatar img:not(.img) {
+    height: 30px;
+  }
+
+  .card .img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card .info {
+    gap: 7px;
+  }
+
+  .card .username {
+    font-size: 14px;
+  }
+
+  .card .user img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .card .stats {
+    gap: 10px;
+  }
+
+  .card .value {
+    font-size: 14px;
+  }
+
+  .card .label {
+    font-size: 9px;
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FooterSection.css';
 
 const FooterSection = () => {
@@ -15,43 +16,35 @@ const FooterSection = () => {
           </p>
 
           <div className="links">
-            <a 
-              href="https://supercaso.com.br/politica-de-privacidade" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/politica-de-privacidade" 
               className="link"
             >
               Política de Privacidade
-            </a>
-            <a 
-              href="https://supercaso.com.br/termos-de-uso" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            </Link>
+            <Link 
+              to="/termos-de-uso" 
               className="link"
             >
               Termos de Uso
-            </a>
+            </Link>
           </div>
 
           <p className="copyright">
             Copyright © ML EDUCAÇÃO · 2025 |{' '}
-            <a 
-              href="https://supercaso.com.br/termos-de-uso" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/termos-de-uso"
               className="link"
             >
               <strong>Termos de Uso</strong>
-            </a>
+            </Link>
             {' '}·{' '}
-            <a 
-              href="https://supercaso.com.br/politica-de-privacidade" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/politica-de-privacidade"
               className="link"
             >
               <strong>Política de Privacidade</strong>
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  contain: layout style paint;
+}
+
+.form-container {
+  background: rgb(14, 15, 45);
+  border: none;
+  border-radius: 20px;
+  padding: 35px 40px 30px;
+  max-width: 650px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-height: 90vh;
+  overflow-y: auto;
+  contain: layout style paint;
+  transform: translateZ(0);
+}
+
+.form-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.form-close-btn:hover {
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-title {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.form-error-box {
+  background: rgba(211, 17, 26, 0.1);
+  border: 1px solid rgba(211, 17, 26, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  color: #D3111A;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.form-group.dropdown-open {
+  margin-bottom: 280px;
+  will-change: margin-bottom;
+}
+
+.form-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-icon {
+  position: absolute;
+  left: 20px;
+  opacity: 1;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 20px 16px 55px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #8C8C8C;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.form-select-container {
+  width: 100%;
+  padding: 16px 50px 16px 55px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.form-select-container.focused {
+  border-color: #D3111A;
+  box-shadow: 0 0 0 3px rgba(211, 17, 26, 0.1);
+}
+
+.form-select-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #8C8C8C;
+}
+
+.form-select-label.selected {
+  color: #333;
+}
+
+.form-select-arrow {
+  position: absolute;
+  right: 20px;
+  transition: transform 0.15s ease;
+}
+
+.form-select-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.form-options-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideDown 0.15s ease;
+  max-height: 240px;
+  overflow-y: auto;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
+
+.form-option-button {
+  width: 100%;
+  padding: 14px 20px;
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  text-align: left;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  outline: none;
+}
+
+.form-option-button:last-child {
+  border-bottom: none;
+}
+
+.form-option-button:hover {
+  background: rgba(211, 17, 26, 0.1);
+}
+
+.form-option-button.selected {
+  background: #D3111A;
+  color: #ffffff;
+}
+
+.form-option-button.selected:hover {
+  background: #B50E17;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 20px;
+  background: #D3111A;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 25px rgba(211, 17, 26, 0.3);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.form-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #B50E17;
+  box-shadow: 0 15px 35px rgba(211, 17, 26, 0.4);
+}
+
+.form-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-terms {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #8C8C8C;
+  line-height: 1.4;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.form-terms-link {
+  color: #D3111A;
+  text-decoration: underline;
+  transition: opacity 0.15s ease;
+  cursor: pointer;
+}
+
+.form-terms-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px 25px 25px;
+    border-radius: 16px;
+    max-height: 95vh;
+  }
+
+  .form-close-btn {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 28px;
+  }
+
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .form-input,
+  .form-select-container {
+    padding: 14px 18px 14px 50px;
+    font-size: 15px;
+  }
+
+  .form-input-icon {
+    left: 18px;
+  }
+
+  .form-input-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .form-submit-btn {
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  .form-terms {
+    font-size: 11px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-overlay {
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 25px 20px 20px;
+    border-radius: 12px;
+  }
+
+  .form-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .form-input,
+  .form-select-container {
+    padding: 12px 16px 12px 45px;
+    font-size: 14px;
+  }
+
+  .form-input-icon {
+    left: 16px;
+  }
+
+  .form-input-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .form-submit-btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .form-terms {
+    font-size: 10px;
+  }
+
+  .form-error-box {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .form-options-container {
+    max-height: 200px;
+  }
+
+  .form-option-button {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 370px) {
+  .form-title {
+    font-size: 18px;
+  }
+
+  .form-input,
+  .form-select-container {
+    padding: 10px 14px 10px 40px;
+    font-size: 13px;
+  }
+
+  .form-submit-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* Scrollbar personalizada */
+.form-options-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-options-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.form-options-container::-webkit-scrollbar-thumb {
+  background: #D3111A;
+  border-radius: 10px;
+}
+
+.form-options-container::-webkit-scrollbar-thumb:hover {
+  background: #B50E17;
+}
+
+.form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background: rgba(211, 17, 26, 0.5);
+  border-radius: 10px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(211, 17, 26, 0.7);
+}
+

@@ -25,6 +25,7 @@ const ClientsSection = () => {
                 posts={client.posts}
                 followers={client.followers}
                 following={client.following}
+                animateNumbers={true}
               />
             </div>
           ))}

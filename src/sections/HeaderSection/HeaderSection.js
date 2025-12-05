@@ -1,12 +1,14 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
 import NoticeBanner from '../../components/NoticeBanner/NoticeBanner';
+import { useForm } from '../../context/FormContext';
 import './HeaderSection.css';
 
 const HeaderSection = () => {
+  const { openForm } = useForm();
+  
   const handleCheckAvailability = () => {
-    // Lógica para verificar disponibilidade
-    console.log('Verificar disponibilidade');
+    openForm();
   };
 
   return (

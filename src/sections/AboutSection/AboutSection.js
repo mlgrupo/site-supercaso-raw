@@ -1,10 +1,13 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
+import { useForm } from '../../context/FormContext';
 import './AboutSection.css';
 
 const AboutSection = () => {
+  const { openForm } = useForm();
+  
   const handleCheckAvailability = () => {
-    console.log('Verificar disponibilidade');
+    openForm();
   };
 
   return (
@@ -17,12 +20,11 @@ const AboutSection = () => {
           <div className="header">
             <h2 className="title">
               <span className="title-main">LEONARDO ROSSO</span>
-              <br />
-              <span className="title-sub">MEIO BILHÃO EM VENDAS.</span>
-            </h2>
-            <p className="tagline">
+              <p className="tagline">MEIO BILHÃO EM VENDAS.</p>
+               <p className="tagline">
               <strong>UMA ÚNICA ESTRATÉGIA.</strong>
             </p>
+            </h2>
           </div>
 
           <div className="text">
