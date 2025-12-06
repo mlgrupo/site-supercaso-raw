@@ -1,5 +1,3 @@
-name = "reconecta-landing-page"
+# wrangler.toml
+name = "site-supercaso-raw"
 compatibility_date = "2024-01-01"
-
-# Para Cloudflare Pages, use: wrangler pages deploy build
-# Não use: wrangler deploy (isso é para Workers)
