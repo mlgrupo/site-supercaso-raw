@@ -227,11 +227,18 @@
     margin-top: 0;
   }
 }
+@media (max-width: 600px) {
+  .header {
+    height: 80vh;
+
+  }
+
+}
 
 /* Smartphone pequeno - 480px */
 @media (max-width: 480px) {
   .header {
-    height: 88vh;
+    height: 80vh;
 
   }
 
