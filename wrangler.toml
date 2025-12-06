@@ -1,0 +1,6 @@
+# Configuração para Cloudflare Pages
+# Para deploy, use: wrangler pages deploy build
+# Ou configure via interface web do Cloudflare Pages:
+# - Build command: npm run build
+# - Build output directory: build
+
