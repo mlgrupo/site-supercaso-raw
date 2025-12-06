@@ -6,6 +6,9 @@
   opacity: 1;
   box-sizing: border-box;
   overflow: visible;
+  /* Otimizações de performance */
+  contain: layout style paint;
+  will-change: contents;
 }
 
 .card .content {

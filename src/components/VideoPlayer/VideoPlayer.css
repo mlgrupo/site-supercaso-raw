@@ -6,6 +6,9 @@
   transform: unset;
   cursor: pointer;
   overflow: hidden;
+  /* Otimizações de performance */
+  contain: layout style paint;
+  will-change: contents;
 }
 
 .video .thumbnail {
@@ -29,6 +32,17 @@
   background: transparent;
   cursor: pointer;
   z-index: 1;
+  /* Otimização: transição suave apenas em transform e opacity */
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.video .play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video .play-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
 }
 
 .video .iframe {

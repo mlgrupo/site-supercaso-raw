@@ -10,14 +10,15 @@ const VideoPlayer = ({ videoId, thumbnailUrl, title = "Youtube Video" }) => {
 
   return (
     <article className="video" role="presentation">
-      <link rel="preconnect" href="https://i.ytimg.com/" />
       {!isPlaying && (
         <>
           <img
             decoding="async"
+            loading="lazy"
             src={thumbnailUrl}
             alt={title}
             className="thumbnail"
+            fetchpriority="low"
           />
           <button
             aria-label="Play"

@@ -4,11 +4,19 @@
   background-color: rgb(14, 15, 45);
   color: rgb(255, 255, 255);
   overflow-x: hidden;
+  /* Otimizações de performance */
+  contain: layout style paint;
+  will-change: scroll-position;
 }
 
 /* Garantir que imagens sejam responsivas */
 img {
   max-width: 100%;
   height: auto;
+  /* Prevenir layout shift */
+  display: block;
+  /* Otimização de renderização */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
