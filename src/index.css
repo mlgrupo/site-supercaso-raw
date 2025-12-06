@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   /* Otimização: reduzir repaints */
-  contain: layout style;
+  /* contain: layout style; - REMOVIDO para permitir que overlays fixos funcionem corretamente */
 }
 
 code {

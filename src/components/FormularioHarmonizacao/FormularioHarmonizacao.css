@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* REGRA GLOBAL: Garantir que o overlay escape de TODOS os contextos */
+body > .form-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  z-index: 99999 !important;
+  transform: none !important;
+  contain: none !important;
+  isolation: isolate !important;
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -11,38 +27,51 @@
   }
 }
 
+/* overlay robusto - renderizado via Portal diretamente no body */
+/* IMPORTANTE: Este overlay deve ESCAPAR de todos os contextos de contain/transform */
 .form-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  padding: 20px;
-  overflow-y: auto;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  background: rgba(0,0,0,0.85) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 99999 !important;
+  overflow-y: auto !important;
   -webkit-overflow-scrolling: touch;
-  contain: layout style paint;
+  /* CRÍTICO: Forçar escape de todos os contextos de contain/transform */
+  transform: none !important;
+  contain: none !important;
+  isolation: isolate !important;
+  /* Garantir que não seja afetado por qualquer contexto pai */
+  will-change: auto !important;
 }
 
+/* .form-container: remova transform/contain que podem atrapalhar */
 .form-container {
   background: rgb(14, 15, 45);
-  border: none;
   border-radius: 20px;
   padding: 35px 40px 30px;
   max-width: 650px;
   width: 100%;
   position: relative;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   max-height: 90vh;
   overflow-y: auto;
-  contain: layout style paint;
-  transform: translateZ(0);
+  /* REMOVA: contain e transform enquanto testa */
+  /* contain: layout style paint; */
+  /* transform: translateZ(0); */
 }
+
+
 
 .form-close-btn {
   position: absolute;

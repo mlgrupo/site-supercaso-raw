@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../../components/Button/Button';
 import { useForm } from '../../context/FormContext';
+import leoVer from '../../imgs/Leo-ver.png';
+import leonardo from '../../imgs/Leonardo.png';
 import './AboutSection.css';
 
 const AboutSection = () => {
   const { openForm } = useForm();
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1280);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const handleCheckAvailability = () => {
     openForm();
@@ -13,7 +25,14 @@ const AboutSection = () => {
   return (
     <section className="about" data-section-name="about">
       <div className="bg">
-        {/* Imagem de fundo será adicionada via CSS */}
+        <img
+          src={isMobile ? leoVer : leonardo}
+          alt="Leonardo Rosso"
+          className="bg-image"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+        />
       </div>
       <div className="container">
         <div className="content">

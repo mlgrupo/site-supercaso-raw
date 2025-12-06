@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useForm } from '../../context/FormContext';
 import { Link } from 'react-router-dom';
 import './FormularioHarmonizacao.css';
 
 const FormularioHarmonizacao = () => {
   const { isFormOpen, closeForm } = useForm();
+  const overlayRef = useRef(null);
 
   // Estados do formulário
   const [currentError, setCurrentError] = useState('');
@@ -550,29 +552,111 @@ const FormularioHarmonizacao = () => {
     };
   }, [isFormOpen, closeForm]);
 
-  // Bloquear scroll do body quando formulário estiver aberto
+  // Bloquear scroll do body quando formulário estiver aberto e garantir posicionamento
   useEffect(() => {
     if (isFormOpen) {
+      // Salvar posição de scroll atual ANTES de qualquer mudança
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      
+      // PREVENIR qualquer scroll automático
+      window.scrollTo(0, scrollY);
+      
+      // Salvar estilos originais
       const originalOverflow = document.body.style.overflow;
+      const originalOverflowHtml = document.documentElement.style.overflow;
       const originalPaddingRight = document.body.style.paddingRight;
+      
+      // Calcular largura da scrollbar ANTES de bloquear scroll
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       
+      // Bloquear scroll em body E html
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
       if (scrollbarWidth > 0) {
         document.body.style.paddingRight = `${scrollbarWidth}px`;
       }
       
+      // Prevenir scroll em todos os elementos possíveis
+      const preventScroll = (e) => {
+        if (e.target.closest('.form-overlay') || e.target.closest('.form-container')) {
+          return; // Permitir scroll dentro do formulário
+        }
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      };
+      
+      // Adicionar listeners para prevenir scroll
+      window.addEventListener('scroll', preventScroll, { passive: false, capture: true });
+      window.addEventListener('wheel', preventScroll, { passive: false, capture: true });
+      window.addEventListener('touchmove', preventScroll, { passive: false, capture: true });
+      
+      // Garantir que o overlay apareça sempre na viewport atual
+      // Usar setTimeout para garantir que o Portal foi renderizado
+      const ensureOverlayPosition = () => {
+        const overlay = overlayRef.current || document.querySelector('.form-overlay');
+        if (overlay) {
+          // Resetar scroll do overlay
+          overlay.scrollTop = 0;
+          
+          // Forçar posicionamento fixo na viewport atual
+          overlay.style.cssText = `
+            position: fixed !important;
+            top: 0px !important;
+            left: 0px !important;
+            right: 0px !important;
+            bottom: 0px !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            padding: 20px !important;
+            z-index: 99999 !important;
+            transform: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+          `;
+          
+          // Garantir que não há scroll na página
+          window.scrollTo(0, scrollY);
+        } else {
+          // Se overlay ainda não existe, tentar novamente
+          setTimeout(ensureOverlayPosition, 10);
+        }
+      };
+      
+      // Tentar múltiplas vezes para garantir
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          ensureOverlayPosition();
+          setTimeout(ensureOverlayPosition, 50);
+        });
+      });
+      
       return () => {
+        // Remover listeners
+        window.removeEventListener('scroll', preventScroll, { capture: true });
+        window.removeEventListener('wheel', preventScroll, { capture: true });
+        window.removeEventListener('touchmove', preventScroll, { capture: true });
+        
+        // Restaurar estilos
         document.body.style.overflow = originalOverflow;
+        document.documentElement.style.overflow = originalOverflowHtml;
         document.body.style.paddingRight = originalPaddingRight;
+        
+        // Restaurar posição de scroll
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollY);
+        });
       };
     }
   }, [isFormOpen]);
 
-  if (!isFormOpen) return null;
+  // Garantir que o body existe antes de renderizar
+  if (!isFormOpen || typeof document === 'undefined') return null;
 
-  return (
-    <div className="form-overlay" onClick={closeForm}>
+  const overlayContent = (
+    <div ref={overlayRef} className="form-overlay" onClick={closeForm}>
       <div className="form-container" onClick={(e) => e.stopPropagation()}>
         <button className="form-close-btn" onClick={closeForm}>
           ×
@@ -781,6 +865,9 @@ const FormularioHarmonizacao = () => {
       </div>
     </div>
   );
+
+  // Renderizar usando Portal diretamente no body para evitar problemas com contain/transform dos containers pais
+  return createPortal(overlayContent, document.body);
 };
 
 // Componentes de ícones

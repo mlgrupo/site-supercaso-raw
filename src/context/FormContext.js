@@ -13,7 +13,13 @@ export const useForm = () => {
 export const FormProvider = ({ children }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const openForm = () => setIsFormOpen(true);
+  const openForm = () => {
+    // Prevenir qualquer scroll quando abrir o formulário
+    const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    window.scrollTo(0, currentScrollY);
+    setIsFormOpen(true);
+  };
+  
   const closeForm = () => setIsFormOpen(false);
 
   return (

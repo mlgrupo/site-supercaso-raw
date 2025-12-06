@@ -34,12 +34,40 @@
     <link rel="dns-prefetch" href="https://www.youtube.com">
     <link rel="dns-prefetch" href="https://reconectaoficial.typeform.com">
     
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="%PUBLIC_URL%/style.css" as="style">
-    <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
+    <!-- Google Fonts Inter - Preconnect CRÍTICO para reduzir latência da cadeia (451ms → ~200ms) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Carregamento assíncrono do Google Fonts para não bloquear renderização -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
     
-    <!-- Otimização de fontes - font-display: swap para melhor FCP -->
+    <!-- CSS crítico inline para evitar bloqueio de renderização -->
     <style>
+      /* CSS crítico acima da dobra - inline para melhor FCP */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: rgb(14, 15, 45);
+        overflow-x: hidden;
+        width: 100%;
+        /* contain: layout style; - REMOVIDO para permitir que overlays fixos funcionem corretamente */
+      }
+      #root {
+        background-color: rgb(14, 15, 45);
+        min-height: 100vh;
+      }
+      /* Otimização de fontes - font-display: swap */
       @font-face {
         font-family: "Playfair Display";
         font-display: swap;
@@ -52,11 +80,11 @@
         font-family: "Sfizia Bold";
         font-display: swap;
       }
-      /* Otimização: prevenir FOIT (Flash of Invisible Text) */
-      body {
-        font-display: swap;
-      }
     </style>
+    
+    <!-- CSS não crítico - carregamento assíncrono -->
+    <link rel="preload" href="%PUBLIC_URL%/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/style.css"></noscript>
     
     <!-- Script de Variante -->
     <script>

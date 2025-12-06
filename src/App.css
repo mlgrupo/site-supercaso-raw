@@ -1,3 +1,4 @@
+/* CSS crítico inline para melhor FCP */
 .App {
   width: 100%;
   min-height: 100vh;
@@ -5,8 +6,14 @@
   color: rgb(255, 255, 255);
   overflow-x: hidden;
   /* Otimizações de performance */
-  contain: layout style paint;
+  /* contain: layout style paint; - REMOVIDO para permitir que overlays fixos funcionem corretamente */
   will-change: scroll-position;
+}
+
+/* Prevenir FOUC (Flash of Unstyled Content) */
+#root {
+  background-color: rgb(14, 15, 45);
+  min-height: 100vh;
 }
 
 /* Garantir que imagens sejam responsivas */
