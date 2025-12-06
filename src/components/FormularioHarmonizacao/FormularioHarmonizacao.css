@@ -38,7 +38,7 @@ body > .form-overlay {
   width: 100vw !important;
   height: 100vh !important;
   margin: 0 !important;
-  padding: 20px !important;
+  padding: 0 !important;
   background: rgba(0,0,0,0.85) !important;
   display: flex !important;
   align-items: center !important;
@@ -54,6 +54,21 @@ body > .form-overlay {
   will-change: auto !important;
 }
 
+/* Wrapper interno para garantir centralização mesmo com scroll */
+.form-overlay::before {
+  content: '';
+  display: block;
+  min-height: calc(50vh - 50%);
+  flex-shrink: 0;
+}
+
+.form-overlay::after {
+  content: '';
+  display: block;
+  min-height: calc(50vh - 50%);
+  flex-shrink: 0;
+}
+
 /* .form-container: remova transform/contain que podem atrapalhar */
 .form-container {
   background: rgb(14, 15, 45);
@@ -66,6 +81,8 @@ body > .form-overlay {
   font-family: 'Inter', sans-serif;
   max-height: 90vh;
   overflow-y: auto;
+  margin: 20px;
+  flex-shrink: 0;
   /* REMOVA: contain e transform enquanto testa */
   /* contain: layout style paint; */
   /* transform: translateZ(0); */
