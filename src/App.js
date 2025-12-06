@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FormProvider } from './context/FormContext';
 import HeaderSection from './sections/HeaderSection/HeaderSection';
@@ -15,6 +15,37 @@ import FormularioHarmonizacao from './components/FormularioHarmonizacao/Formular
 import './App.css';
 
 function HomePage() {
+  useEffect(() => {
+    // Definir title e meta description para a home
+    const originalTitle = document.title;
+    const originalMetaDescription = document.querySelector('meta[name="description"]');
+    const originalMetaContent = originalMetaDescription ? originalMetaDescription.getAttribute('content') : null;
+    
+    document.title = 'Consulta de avaliação - Verifique a disponibilidade';
+    
+    // Criar ou atualizar meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Saiba o que está sendo feito e também ter 10-60 novos pacientes, visite para mais informações');
+
+    // Cleanup - restaurar valores originais ao sair da página
+    return () => {
+      document.title = originalTitle;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        if (originalMetaContent) {
+          metaDesc.setAttribute('content', originalMetaContent);
+        } else {
+          metaDesc.remove();
+        }
+      }
+    };
+  }, []);
+
   return (
     <div className="App">
       <HeaderSection />

@@ -6,6 +6,22 @@ const Consulta = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Definir title e meta description específicos desta página
+    const originalTitle = document.title;
+    const originalMetaDescription = document.querySelector('meta[name="description"]');
+    const originalMetaContent = originalMetaDescription ? originalMetaDescription.getAttribute('content') : null;
+    
+    document.title = 'Consulta de avaliação - Verifique a disponibilidade';
+    
+    // Criar ou atualizar meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Saiba o que está sendo feito e também ter 10-60 novos pacientes, visite para mais informações');
+
     // Garantir que a classe seja adicionada
     const addClass = () => {
       document.body.classList.add('consulta-active');
@@ -134,6 +150,17 @@ const Consulta = () => {
       return () => {
         clearTimeout(loadingTimeout);
         document.body.classList.remove('consulta-active');
+        // Restaurar title original
+        document.title = originalTitle;
+        // Restaurar meta description original
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          if (originalMetaContent) {
+            metaDesc.setAttribute('content', originalMetaContent);
+          } else {
+            metaDesc.remove();
+          }
+        }
       };
     } catch (error) {
       console.error('Erro ao processar parâmetros:', error);
@@ -141,12 +168,24 @@ const Consulta = () => {
       // Mesmo com erro, carregar o Typeform sem parâmetros
       setIframeUrl('https://reconectaoficial.typeform.com/to/xzxQazkB');
       
-      setTimeout(() => {
+      const errorTimeout = setTimeout(() => {
         setIsLoading(false);
       }, 300);
       
       return () => {
+        clearTimeout(errorTimeout);
         document.body.classList.remove('consulta-active');
+        // Restaurar title original
+        document.title = originalTitle;
+        // Restaurar meta description original
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          if (originalMetaContent) {
+            metaDesc.setAttribute('content', originalMetaContent);
+          } else {
+            metaDesc.remove();
+          }
+        }
       };
     }
   }, []);
@@ -156,22 +195,22 @@ const Consulta = () => {
 
   return (
     <div className="consulta-page">
-      {isLoading && (
-        <div className="consulta-loading">
-          <p>Carregando aplicação...</p>
-        </div>
-      )}
-      <iframe
-        key={displayUrl}
-        src={displayUrl}
-        className="consulta-iframe"
-        title="Consulta"
-        allow="camera; microphone; geolocation; autoplay; encrypted-media; picture-in-picture"
-        frameBorder="0"
-        loading="eager"
-        allowFullScreen
-      />
-    </div>
+        {isLoading && (
+          <div className="consulta-loading">
+            <p>Carregando aplicação...</p>
+          </div>
+        )}
+        <iframe
+          key={displayUrl}
+          src={displayUrl}
+          className="consulta-iframe"
+          title="Consulta"
+          allow="camera; microphone; geolocation; autoplay; encrypted-media; picture-in-picture"
+          frameBorder="0"
+          loading="eager"
+          allowFullScreen
+        />
+      </div>
   );
 };
 
