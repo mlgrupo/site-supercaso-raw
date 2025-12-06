@@ -10,6 +10,7 @@ import FooterSection from './sections/FooterSection/FooterSection';
 import PrivacyPage from './pages/PrivacyPage';
 import TermosDeUso from './pages/TermosDeUso';
 import PreCall from './pages/PreCall';
+import Consulta from './pages/Consulta';
 import FormularioHarmonizacao from './components/FormularioHarmonizacao/FormularioHarmonizacao';
 import './App.css';
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/politica-de-privacidade" element={<PrivacyPage />} />
           <Route path="/termos-de-uso" element={<TermosDeUso />} />
           <Route path="/pre-call" element={<PreCall />} />
+          <Route path="/consulta" element={<Consulta />} />
         </Routes>
         <FormularioHarmonizacao />
       </Router>
