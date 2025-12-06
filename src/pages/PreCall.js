@@ -24,10 +24,6 @@ const PreCall = () => {
     return match ? match[1] : null;
   };
 
-  const mainVideo = {
-    pandaId: '1e5df8d9-dd65-458c-aedf-0a2b164d7d3d'
-  };
-
   const testimonialVideos = [
     {
       id: extractYouTubeId('https://www.youtube.com/watch?v=BdvgjHc96q0'),

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useForm } from '../../context/FormContext';
 import { Link } from 'react-router-dom';
 import './FormularioHarmonizacao.css';
@@ -10,7 +10,6 @@ const FormularioHarmonizacao = () => {
   const [currentError, setCurrentError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState('');
-  const [hasPrefilledData, setHasPrefilledData] = useState(false);
 
   const [formData, setFormData] = useState({
     email: '',
@@ -76,7 +75,7 @@ const FormularioHarmonizacao = () => {
         return false;
       }
     },
-    [formData.harmonizacao, formData.nome]
+    [formData.harmonizacao, formData.nome, formData.email, formData.instagram]
   );
 
   // CARREGAR DADOS DO LOCALSTORAGE AO INICIALIZAR
@@ -93,8 +92,6 @@ const FormularioHarmonizacao = () => {
             ...prevData,
             ...parsedData,
           }));
-          setHasPrefilledData(true);
-          setTimeout(() => setHasPrefilledData(false), 3000);
         }
       }
     } catch (error) {
