@@ -15,13 +15,26 @@
   display: flex;
   width: 50%;
   height: 800px;
-
   z-index: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about .bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('../../imgs/Leo-ver.png');
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.8;
+  /* Otimização: usar GPU para composição */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .about .container {

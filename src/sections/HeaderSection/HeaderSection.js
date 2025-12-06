@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../../components/Button/Button';
 import NoticeBanner from '../../components/NoticeBanner/NoticeBanner';
 import { useForm } from '../../context/FormContext';
+import backLeoDesk from '../../imgs/back-leo-desk.png';
+import backgroundMobile from '../../imgs/background-mobile.png';
 import './HeaderSection.css';
 
 const HeaderSection = () => {
   const { openForm } = useForm();
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 810);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const handleCheckAvailability = () => {
     openForm();
@@ -26,7 +38,15 @@ const HeaderSection = () => {
       />
       <section className="header" data-section-name="header">
         <div className="bg">
-          {/* Imagem de fundo será adicionada via CSS ou como elemento */}
+          <img
+            src={isMobile ? backgroundMobile : backLeoDesk}
+            alt=""
+            className="bg-image"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            aria-hidden="true"
+          />
         </div>
         <div className="container">
           <div className="content">

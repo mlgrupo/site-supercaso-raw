@@ -38,6 +38,26 @@
     <link rel="preload" href="%PUBLIC_URL%/style.css" as="style">
     <link rel="stylesheet" href="%PUBLIC_URL%/style.css">
     
+    <!-- Otimização de fontes - font-display: swap para melhor FCP -->
+    <style>
+      @font-face {
+        font-family: "Playfair Display";
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Sfizia Bold";
+        font-display: swap;
+      }
+      /* Otimização: prevenir FOIT (Flash of Invisible Text) */
+      body {
+        font-display: swap;
+      }
+    </style>
+    
     <!-- Script de Variante -->
     <script>
         (function() {

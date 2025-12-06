@@ -1,3 +1,11 @@
-# wrangler.toml
+# Configuração para Cloudflare Pages
+# Este arquivo é usado apenas para referência
+# O deploy deve ser feito via Cloudflare Pages (não Workers)
+
 name = "site-supercaso-raw"
 compatibility_date = "2024-01-01"
+
+# Para Pages, configure via interface web:
+# - Build command: npm run build
+# - Build output directory: build
+# - Deploy command: (deixe vazio)

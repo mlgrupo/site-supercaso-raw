@@ -22,6 +22,8 @@ body {
   background: rgb(14, 15, 45);
   overflow-x: hidden;
   width: 100%;
+  /* Otimização: reduzir repaints */
+  contain: layout style;
 }
 
 code {
@@ -43,11 +45,20 @@ code {
 img {
   content-visibility: auto;
   contain-intrinsic-size: 200px;
+  /* Usar GPU para composição */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Prevenir layout shift */
 img[loading="lazy"] {
   min-height: 200px;
   background: rgba(255, 255, 255, 0.05);
+}
+
+/* Otimização: reduzir repaints em elementos com background */
+section, .header, .about {
+  transform: translateZ(0);
+  will-change: scroll-position;
 }
 

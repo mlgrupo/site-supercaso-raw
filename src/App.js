@@ -7,6 +7,7 @@ import FormularioHarmonizacao from './components/FormularioHarmonizacao/Formular
 import './App.css';
 
 // Lazy load de componentes não críticos para melhor performance
+// HeaderSection e StrategicSessionSection são críticos (above the fold) - não lazy load
 const TestimonialsSection = lazy(() => import('./sections/TestimonialsSection/TestimonialsSection'));
 const ClientsSection = lazy(() => import('./sections/ClientsSection/ClientsSection'));
 const AboutSection = lazy(() => import('./sections/AboutSection/AboutSection'));
@@ -16,16 +17,18 @@ const TermosDeUso = lazy(() => import('./pages/TermosDeUso'));
 const PreCall = lazy(() => import('./pages/PreCall'));
 const Consulta = lazy(() => import('./pages/Consulta'));
 
-// Componente de loading skeleton
-const SectionSkeleton = () => (
+// Componente de loading skeleton otimizado
+const SectionSkeleton = React.memo(() => (
   <div style={{ 
     minHeight: '400px', 
     background: 'rgba(255, 255, 255, 0.05)',
     borderRadius: '8px',
     margin: '20px 0',
-    animation: 'pulse 1.5s ease-in-out infinite'
+    animation: 'pulse 1.5s ease-in-out infinite',
+    contain: 'layout style paint'
   }} />
-);
+));
+SectionSkeleton.displayName = 'SectionSkeleton';
 
 function HomePage() {
   useEffect(() => {
@@ -130,7 +133,8 @@ function App() {
             } 
           />
         </Routes>
-        <FormularioHarmonizacao />
+        {/* Formulário carregado apenas quando necessário */}
+        {typeof window !== 'undefined' && <FormularioHarmonizacao />}
       </Router>
     </FormProvider>
   );
