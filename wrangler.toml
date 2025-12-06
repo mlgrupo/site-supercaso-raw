@@ -1,6 +1,5 @@
-# Configuração para Cloudflare Pages
-# Para deploy, use: wrangler pages deploy build
-# Ou configure via interface web do Cloudflare Pages:
-# - Build command: npm run build
-# - Build output directory: build
+name = "reconecta-landing-page"
+compatibility_date = "2024-01-01"
 
+# Para Cloudflare Pages, use: wrangler pages deploy build
+# Não use: wrangler deploy (isso é para Workers)
