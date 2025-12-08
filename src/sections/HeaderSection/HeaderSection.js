@@ -58,7 +58,7 @@ const HeaderSection = () => {
                 <p className="text-line">
                   O MEU TIME DE ESTRATEGISTAS
                   PODE FAZER UM <strong>DIAGNÓSTICO </strong>
-                  <strong>GRATUITO</strong> <span className="normal">DO</span> <strong>MARKETING</strong>, <strong>VENDAS E GESTÃO</strong> <br/>DA <u>SUA CLÍNICA</u>
+                  <strong>GRATUITO</strong> <span className="normal">DO</span> <strong>MARKETING</strong>, <strong>VENDAS E GESTÃO</strong> DA<br/> <u>SUA CLÍNICA</u>
                </p>
               </div>
               <div className="description">
