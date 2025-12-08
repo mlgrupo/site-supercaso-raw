@@ -1,19 +1,22 @@
 .about {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   position: relative;
   gap : 20px;
   overflow: hidden;
-  padding: 80px 20px;
+  padding: 80px 20px 0px 0px;
   background-color: rgb(14, 15, 45);
+}
+
+.header-about {
+  
 }
 
 .about .bg {
   display: flex;
   width: 50%;
-  height: 800px;
+  /* height: 800px; */
   z-index: 0;
   position: relative;
   overflow: hidden;
@@ -47,6 +50,8 @@
   flex-direction: column;
   gap: 60px;
   align-items: center;
+  justify-content: space-between;
+  padding: 80px 0px 80px 0px;
 }
 
 .about .header {
@@ -58,6 +63,9 @@
   font-size: 60px;
   color: rgb(255, 252, 246);
   margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about .title-main {
@@ -118,7 +126,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-  
+    padding: 0;
     min-height: auto;
     gap: 40px;
   }
@@ -142,6 +150,10 @@
     width: 100%;
     order: 2;
   }
+
+  .about .content {
+    padding: 0 20px 40px 20px;
+  }
 }
 
 /* Tablet - 810px */
@@ -151,7 +163,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 35px 12px;
+    padding: 0;
     min-height: auto;
   }
 
@@ -179,7 +191,8 @@
   }
 
   .about .content {
-    gap: 20px;
+    gap: 10px;
+    padding: 0 20px 40px 20px;
   }
 
   .about .title {
@@ -217,7 +230,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 35px 12px;
+    padding: 0;
     min-height: auto;
   }
 
@@ -233,6 +246,7 @@
   .about .bg-image {
     object-fit: cover;
     object-position: center;
+    object-position: 45%;
   }
 
   .about .container {
@@ -245,7 +259,8 @@
   }
 
   .about .content {
-    gap: 15px;
+    gap: 20px;
+    padding: 0 20px 40px 20px;
   }
 
   .about .title {
@@ -283,7 +298,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 10px;
+    padding: 0;
   }
 
   .about .bg {
@@ -298,6 +313,7 @@
   .about .bg-image {
     object-fit: cover;
     object-position: center;
+    object-position: 45%;
   }
 
   .about .container {
@@ -311,6 +327,7 @@
 
   .about .content {
     gap: 10px;
+    padding: 0 20px 40px 20px;
   }
 
   .about .title {
@@ -348,7 +365,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 25px 8px;
+    padding: 0;
   }
   .about .bg {
     width: 100%;
@@ -362,6 +379,7 @@
   .about .bg-image {
     object-fit: cover;
     object-position: center;
+    object-position: 45%;
   }
 
   .about .container {
@@ -374,6 +392,7 @@
 }
   .about .content {
     gap: 5px;
+    padding: 0 20px 40px 20px;
   }
 
   .about .title {

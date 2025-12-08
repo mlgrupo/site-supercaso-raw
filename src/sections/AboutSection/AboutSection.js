@@ -36,7 +36,7 @@ const AboutSection = () => {
       </div>
       <div className="container">
         <div className="content">
-          <div className="header">
+          <div className="header-about">
             <h2 className="title">
               <span className="title-main">LEONARDO ROSSO</span>
               <p className="tagline">MEIO BILHÃO EM VENDAS.</p>
