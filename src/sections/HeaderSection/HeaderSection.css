@@ -214,6 +214,7 @@
     font-size: 20px;
     line-height: 26px;
     margin: 8px 0;
+     letter-spacing: 0px;
   }
 
   .header .desc-text {
@@ -275,7 +276,7 @@
     font-size: 22px;
     line-height: 26px;
     margin: 6px 0;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
   }
 
   .header .desc-text {
@@ -397,6 +398,13 @@
 
   .header .cta {
     margin-top: 0;
+  }
+}
+
+
+@media (max-width: 390px) {
+  .header .text-line {
+      letter-spacing: 0px;
   }
 }
 
