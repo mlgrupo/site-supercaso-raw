@@ -31,7 +31,7 @@ const AboutSection = () => {
           className="bg-image"
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       </div>
       <div className="container">

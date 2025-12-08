@@ -100,7 +100,6 @@ const PreCall = () => {
               allowFullScreen={true}
               width="100%"
               height="100%"
-              fetchPriority="high"
               title="Vídeo Principal"
             />
           </div>

@@ -43,7 +43,7 @@ const HeaderSection = () => {
             alt=""
             className="bg-image"
             loading="eager"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
             aria-hidden="true"
           />
