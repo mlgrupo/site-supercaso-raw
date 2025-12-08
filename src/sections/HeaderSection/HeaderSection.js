@@ -57,29 +57,24 @@ const HeaderSection = () => {
               <div className="text">
                 <p className="text-line">
                   O MEU TIME DE ESTRATEGISTAS
-                </p>
-                <p className="text-line">
-                  PODE FAZER UM <strong>DIAGNÓSTICO</strong>
-                </p>
-                <p className="text-line bold">
-                  GRATUITO <span className="normal">DO</span> MARKETING,
-                </p>
-                <p className="text-line bold">
-                  VENDAS E GESTÃO
-                </p>
-                <p className="text-line bold highlight">
-                  DA SUA CLÍNICA
-                </p>
+                  <br/>PODE FAZER UM <strong>DIAGNÓSTICO </strong>
+                  <br/><strong>GRATUITO</strong> <span className="normal">DO</span> <strong>MARKETING</strong>,
+                  <br/> <strong>VENDAS E GESTÃO</strong> DA
+                 <br/><u>SUA CLÍNICA</u>
+               </p>
               </div>
               <div className="description">
                 <p className="desc-text">
-                  Em uma <strong>Avaliação gratuita</strong> <span className="normal">de 30 minutos</span>, será identificado todos os pontos cegos que vem impedindo seus objetivos.
+                  Em uma <strong>Avaliação estratégica gratuita</strong> <span className="normal">de 30 minutos</span>, será identificado<br/>
+                  todos os pontos cegos que vem impedindo seus objetivos.
                 </p>
                 <p className="desc-text">
-                  E receberá um <strong>Plano de Ação Personalizado</strong> para estruturar sua clínica à um faturamento de 100 mil ou mais, nos próximos meses.
+                  E receberá um <strong>Plano de Ação Personalizado</strong> para estruturar sua clínica à <br/>
+                  um faturamento de 100 mil ou mais, nos próximos meses.
                 </p>
                 <p className="desc-text">
-                  <strong>Clique no botão abaixo</strong>, verifique os horários ainda disponíveis e faça seu agendamento.
+                  <strong>Clique no botão abaixo</strong>, verifique os horários<br/>
+                   ainda disponíveis e faça seu agendamento.
                 </p>
               </div>
               <div className="cta">
